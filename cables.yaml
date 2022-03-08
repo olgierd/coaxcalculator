@@ -78,14 +78,6 @@ rg58all-satec:
     ext_diameter_mm: 5.0
     velocity_factor: 0.78
     impedance: 50
-rg58all-satec:
-  name: RG-58 ALL (Satec)
-  attenuation: { 50: 8.2, 100: 11.1, 230: 16.3, 470: 24.8, 860: 38.2, 1000: 42.9, 1350: 48.9, 1750: 55.1, 2050: 59.6 }
-  data_source: https://satec.com.pl/wp-content/uploads/2017/10/RG-58-ALL.pdf
-  additional_info:
-    ext_diameter_mm: 5.0
-    velocity_factor: 0.78
-    impedance: 50
 rg213-satec:
   name: RG-213 (Satec)
   attenuation: { 10: 1.8, 100: 6.8, 200: 9.0, 400: 14.4, 1000: 24.7, 1500: 31.5, 2000: 36.4, 3000: 46.6, 5200: 62.0, 5800: 67.0 }
