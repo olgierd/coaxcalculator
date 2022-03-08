@@ -1,0 +1,40 @@
+h155-belden:
+  name: H155 (Belden)
+  attenuation: # MHz: dB/100m
+    5: 2.5
+    50: 6.9
+    100: 9.1
+    230: 13.4
+    400: 18.0
+    800: 26.1
+    862: 27.3
+    1000: 29.6
+    1350: 34.9
+    1750: 40.3
+    2150: 46.0
+    2400: 49.1
+    3000: 56.3
+    4200: 69.1
+    5800: 75.1
+    5400: 80.8
+    6000: 86.5
+  data_source: https://www.tme.eu/Document/18ee3e29381bee0e348180bedff1050b/H155BK_EN.PDF
+  additional_info:
+    ext_diameter_mm: 5.4
+rf5-satec:
+  name: RF-5 (Satec)
+  attenuation: # MHz: dB/100m
+    1: 0.9
+    10: 2.8
+    100: 8.9
+    200: 12.7
+    800: 25.8
+    1000: 29.0
+    1600: 39.8
+    2000: 41.6
+    3000: 51.6
+    5200: 69.3
+    5800: 73.8
+  data_source: https://satec.com.pl/wp-content/uploads/2017/10/RF-5.pdf
+  additional_info:
+    ext_diameter_mm: 5.4
