@@ -145,6 +145,6 @@ mrc240-satec:
   attenuation: { 30: 4.4, 150: 9.9, 220: 12.0, 450: 17.3, 900: 24.8, 1800: 35.6, 2500: 42.4, 5200: 63.3, 5800: 66.8 }
   data_source: https://satec.com.pl/wp-content/uploads/2020/03/MRC-240.pdf
   additional_info:
-    ext_diameter_mm: 1.8
+    ext_diameter_mm: 6.1
     velocity_factor: 0.84
     impedance: 50
