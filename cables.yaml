@@ -16,3 +16,15 @@ rg174-satec:
   data_source: https://satec.com.pl/wp-content/uploads/2017/10/RG-174-Premium.pdf
   additional_info:
     ext_diameter_mm: 2.9
+rg58-satec:
+  name: RG-58 (Satec)
+  attenuation: { 10: 4.2, 50: 10.5, 100: 15.1, 230: 22.4, 470: 35.6, 860: 49.4, 1000: 54.0, 1350: 65.9 }
+  data_source: https://satec.com.pl/wp-content/uploads/2017/10/RG-58-Premium.pdf
+  additional_info:
+    ext_diameter_mm: 5.0
+ekh-155:
+  name: EKH-155 (Elektrokabel)
+  attenuation: { 50: 6.5, 100: 9.3, 230: 14.1, 300: 16.3, 470: 16.9, 600: 18.2, 1000: 30.9, 1350: 35.9, 2150: 46.9 }
+  data_source: https://elektrokabel.pl/img/1524640314-elektrokabel_ekh-155.pdf
+  additional_info:
+    ext_diameter_mm: 5.0
