@@ -10,3 +10,9 @@ rf5-satec:
   data_source: https://satec.com.pl/wp-content/uploads/2017/10/RF-5.pdf
   additional_info:
     ext_diameter_mm: 5.4
+rg174-satec:
+  name: RG-174 (Satec)
+  attenuation: { 10: 8.9, 50: 18.2, 100: 24.1, 200: 39.9, 400: 54.7, 800: 68.8, 1000: 93.1 }
+  data_source: https://satec.com.pl/wp-content/uploads/2017/10/RG-174-Premium.pdf
+  additional_info:
+    ext_diameter_mm: 2.9
