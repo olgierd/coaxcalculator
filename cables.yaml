@@ -1,30 +1,161 @@
 h155-belden:
   name: H155 (Belden)
+  manufacturer: Belden
+  type: H155
   attenuation: { 5: 2.5, 50: 6.9, 100: 9.1, 230: 13.4, 400: 18.0, 800: 26.1, 862: 27.3, 1000: 29.6, 1350: 34.9, 1750: 40.3, 2150: 46.0, 2400: 49.1, 3000: 56.3, 4200: 69.1, 5800: 75.1, 5400: 80.8, 6000: 86.5 }
   data_source: https://www.tme.eu/Document/18ee3e29381bee0e348180bedff1050b/H155BK_EN.PDF
   additional_info:
     ext_diameter_mm: 5.4
+    velocity_factor: 0.8
+    impedance: 50
 rf5-satec:
   name: RF-5 (Satec)
+  manufacturer: Satec
+  type: RF-5
   attenuation: { 1: 0.9, 10: 2.8, 100: 8.9, 200: 12.7, 800: 25.8, 1000: 29.0, 1600: 39.8, 2000: 41.6, 3000: 51.6, 5200: 69.3, 5800: 73.8 }
   data_source: https://satec.com.pl/wp-content/uploads/2017/10/RF-5.pdf
   additional_info:
     ext_diameter_mm: 5.4
+    velocity_factor: 0.78
+    impedance: 50
+rf7-satec:
+  name: RF-7 (Satec)
+  manufacturer: Satec
+  type: RF-7
+  attenuation: { 10: 2.0, 100: 6.4, 200: 9.1, 500: 14.1, 800: 20.9, 1000: 25.9, 1500: 31.0, 2000: 35.0, 2500: 39.0 }
+  data_source: https://satec.com.pl/wp-content/uploads/2017/10/RF-7.pdf
+  additional_info:
+    ext_diameter_mm: 7.3
+    velocity_factor: 0.84
+    impedance: 50
+rf10f-satec:
+  name: RF-10F (Satec)
+  manufacturer: Satec
+  type: RF-10
+  attenuation: { 10: 1.2, 100: 3.7, 500: 8.7, 800: 11.3, 1000: 12.8, 2000: 18.9, 2500: 21.4, 5400: 34.2, 5600: 34.8, 5800: 35.4 }
+  data_source: https://satec.com.pl/wp-content/uploads/2017/10/RF-10-F.pdf
+  additional_info:
+    ext_diameter_mm: 10.3
+    velocity_factor: 0.84
+    impedance: 50
+rg316u-satec:
+  name: RG-316U (Satec)
+  manufacturer: Satec
+  type: RG316
+  attenuation: { 100: 37.0, 200: 47.0, 400: 55.0, 1000: 102.0 }
+  data_source: https://satec.com.pl/wp-content/uploads/2020/01/RG-316.pdf
+  additional_info:
+    ext_diameter_mm: 2.49
+    velocity_factor: 0.7
+    impedance: 50
 rg174-satec:
   name: RG-174 (Satec)
+  manufacturer: Satec
+  type: RG174
+  attenuation: { 10: 9.5, 100: 31.0, 200: 51.0, 400: 74.0, 1000: 120.0 }
+  data_source: https://satec.com.pl/wp-content/uploads/2020/01/RG-174-MIL-C-17F.pdf
+  additional_info:
+    ext_diameter_mm: 2.7
+    velocity_factor: 0.66
+    impedance: 50
+rg174premium-satec:
+  name: RG-174 Premium (Satec)
+  manufacturer: Satec
+  type: RG174
   attenuation: { 10: 8.9, 50: 18.2, 100: 24.1, 200: 39.9, 400: 54.7, 800: 68.8, 1000: 93.1 }
   data_source: https://satec.com.pl/wp-content/uploads/2017/10/RG-174-Premium.pdf
   additional_info:
     ext_diameter_mm: 2.9
-rg58-satec:
-  name: RG-58 (Satec)
+    velocity_factor: 0.66
+    impedance: 50
+rg58premium-satec:
+  name: RG-58 Premium (Satec)
+  manufacturer: Satec
+  type: RG58
   attenuation: { 10: 4.2, 50: 10.5, 100: 15.1, 230: 22.4, 470: 35.6, 860: 49.4, 1000: 54.0, 1350: 65.9 }
   data_source: https://satec.com.pl/wp-content/uploads/2017/10/RG-58-Premium.pdf
   additional_info:
     ext_diameter_mm: 5.0
+    velocity_factor: 0.66
+    impedance: 50
+rg58flex-satec:
+  name: RG-58 Flex (Satec)
+  manufacturer: Satec
+  type: RG58
+  attenuation: { 10: 4.2, 50: 10.5, 100: 15.1, 230: 22.4, 470: 35.6, 860: 49.4, 1000: 54.0, 1350: 65.9 }
+  data_source: https://satec.com.pl/wp-content/uploads/2017/10/RG-58-FLEX-94.pdf
+  additional_info:
+    ext_diameter_mm: 5.0
+    velocity_factor: 0.66
+    impedance: 50
+rg58all-satec:
+  name: RG-58 ALL (Satec)
+  manufacturer: Satec
+  type: RG58
+  attenuation: { 50: 8.2, 100: 11.1, 230: 16.3, 470: 24.8, 860: 38.2, 1000: 42.9, 1350: 48.9, 1750: 55.1, 2050: 59.6 }
+  data_source: https://satec.com.pl/wp-content/uploads/2017/10/RG-58-ALL.pdf
+  additional_info:
+    ext_diameter_mm: 5.0
+    velocity_factor: 0.78
+    impedance: 50
+rg213-satec:
+  name: RG-213 (Satec)
+  manufacturer: Satec
+  type: RG213
+  attenuation: { 10: 1.8, 100: 6.8, 200: 9.0, 400: 14.4, 1000: 24.7, 1500: 31.5, 2000: 36.4, 3000: 46.6, 5200: 62.0, 5800: 67.0 }
+  data_source: https://satec.com.pl/wp-content/uploads/2020/01/RG-213-MIL-C-17F.pdf
+  additional_info:
+    ext_diameter_mm: 10.3
+    velocity_factor: 0.66
+    impedance: 50
+rg213premium-satec:
+  name: RG-213 Premium (Satec)
+  manufacturer: Satec
+  type: RG213
+  attenuation: { 10: 1.7, 50: 4.6, 100: 6.7, 230: 9.8, 470: 15.3, 860: 22.3, 1000: 24.5, 1500: 31.3, 2000: 36.5 }
+  data_source: https://satec.com.pl/wp-content/uploads/2017/10/RG-213-Premium.pdf
+  additional_info:
+    ext_diameter_mm: 10.3
+    velocity_factor: 0.66
+    impedance: 50
+rg142-satec:
+  name: RG-142 (Satec)
+  manufacturer: Satec
+  type: RG142
+  attenuation: { 100: 11.0, 200: 15.0, 400: 23.0, 1000: 43.0 }
+  data_source: https://satec.com.pl/wp-content/uploads/2020/01/RG-142.pdf
+  additional_info:
+    ext_diameter_mm: 4.95
+    velocity_factor: 0.7
+    impedance: 50
+rg142-satec:
+  name: RG-178 (Satec)
+  manufacturer: Satec
+  type: RG178
+  attenuation: { 100: 46.0, 200: 62.0, 400: 92.0, 1000: 151.0 }
+  data_source: https://satec.com.pl/wp-content/uploads/2020/01/RG-178.pdf
+  additional_info:
+    ext_diameter_mm: 1.8
+    velocity_factor: 0.7
+    impedance: 50
+mrc240-satec:
+  name: MRC-240 (Satec)
+  manufacturer: Satec
+  type: CNT240
+  attenuation: { 30: 4.4, 150: 9.9, 220: 12.0, 450: 17.3, 900: 24.8, 1800: 35.6, 2500: 42.4, 5200: 63.3, 5800: 66.8 }
+  data_source: https://satec.com.pl/wp-content/uploads/2020/03/MRC-240.pdf
+  additional_info:
+    ext_diameter_mm: 6.1
+    velocity_factor: 0.84
+    impedance: 50
 ekh-155:
   name: EKH-155 (Elektrokabel)
+  manufacturer: Elektrokabel
+  type: H155
   attenuation: { 50: 6.5, 100: 9.3, 230: 14.1, 300: 16.3, 470: 16.9, 600: 18.2, 1000: 30.9, 1350: 35.9, 2150: 46.9 }
   data_source: https://elektrokabel.pl/img/1524640314-elektrokabel_ekh-155.pdf
   additional_info:
     ext_diameter_mm: 5.0
+    velocity_factor: 0.81
+    impedance: 50
+
