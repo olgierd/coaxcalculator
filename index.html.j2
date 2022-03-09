@@ -1,0 +1,88 @@
+<html>
+
+<body>
+<script type="application/json" id="cable_data">
+{{ cable_json }}
+</script>
+
+<input type="number" id="freq" min="1" max="3000" step="1" value="145" onchange="javascript:update();"> MHz<br>
+<input type="number" id="length" min="1" max="3000" step="1" value="10" onchange="javascript:update();"> m<br>
+<input type="number" id="pwr" min="1" max="1500" step="1" value="100" onchange="javascript:update();"> W (Power in)<br>
+
+<pre id="output">.</pre>
+
+<script>
+  var cables = JSON.parse(document.getElementById('cable_data').innerHTML);
+
+  function get_att_for_freq(att_data, frequency) {
+
+    att_array = Object.entries(att_data); // convert dictionary to an array of pairs
+
+    // frequency higher than last data point specified
+    if(frequency > att_array[att_array.length - 1][0]) {
+      return "-";
+    }
+
+    // spot-on hit - no interpolation needed
+    if(frequency in att_data) {
+      return att_data[frequency];
+    }
+
+    // find two neighboring values
+    for(var i = 0; i < att_array.length;i++) {
+      if(att_array[i][0] > frequency) {
+        if(i>=1) {
+          lower = att_array[i-1];
+        }
+        else {
+          lower = [0, 0];   // use 0 dB @ 0 MHz, if frequency is below the first data point
+        }
+        upper = att_array[i];
+        break;
+      }
+    }
+
+    // simple linear interpolation between two points
+    return (frequency-lower[0])/(upper[0]-lower[0])*(upper[1]-lower[1])+lower[1];
+
+  }
+
+  function update() {
+    frequency = parseInt(document.getElementById('freq').value);
+    length = parseInt(document.getElementById('length').value);
+    pwr_in = parseInt(document.getElementById('pwr').value);
+
+    var output = "Calculating for " + frequency + " MHz & " + length + " meter(s) & " + pwr_in + " Watts input: <br><br>";
+
+    output += "<b>Cable" + ' '.repeat(27) + "Loss       Power out</b></br>"
+
+    for (var key in cables) {
+      att = get_att_for_freq(cables[key]["attenuation"], frequency);
+
+      if(isNaN(att)) {
+        att = "-";
+        pwr_out = "-";
+      }
+      else {
+        att = att * length/100;
+        pwr_out = 10**(Math.log10(pwr_in)-att/10);
+
+        att = Math.round(att*100)/100;
+        att = att.toFixed(2);
+
+        pwr_out = Math.round(pwr_out*100)/100;
+        pwr_out = pwr_out.toFixed(2);
+      }
+
+      output += cables[key].name.padEnd(25) + att.padStart(10) + " dB" + pwr_out.toString().padStart(11) + " W<br>";
+    }
+    document.getElementById("output").innerHTML = output;
+
+  }
+
+  update();
+
+</script>
+
+</body>
+</html>

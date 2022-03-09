@@ -128,7 +128,7 @@ rg142-satec:
     ext_diameter_mm: 4.95
     velocity_factor: 0.7
     impedance: 50
-rg142-satec:
+rg178-satec:
   name: RG-178 (Satec)
   manufacturer: Satec
   type: RG178
@@ -158,4 +158,3 @@ ekh-155:
     ext_diameter_mm: 5.0
     velocity_factor: 0.81
     impedance: 50
-
