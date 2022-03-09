@@ -47,6 +47,12 @@
 
   }
 
+  function sortByAtt(rows){
+    return rows.sort(function(a,b) {
+        return a.att - b.att
+    });
+  }
+
   function update() {
     frequency = parseInt(document.getElementById('freq').value);
     length = parseInt(document.getElementById('length').value);
@@ -55,6 +61,8 @@
     var output = "Calculating for " + frequency + " MHz & " + length + " meter(s) & " + pwr_in + " Watts input: <br><br>";
 
     output += "<b>Cable" + ' '.repeat(31) + "Loss          Power out</b></br>"
+
+    var rows = [];
 
     for (var key in cables) {
       att = get_att_for_freq(cables[key]["attenuation"], frequency);
@@ -80,9 +88,21 @@
 
       }
 
-      output += cables[key].name.padEnd(25) + att.padStart(10) + " dB"
-      output += loss_percentage.padStart(6) + "%" + pwr_out.padStart(11) + " W<br>";
+      rows.push({
+        "cable":  cables[key].name,
+        "att": att,
+        "loss_percentage": loss_percentage,
+        "pwr_out": pwr_out
+      })
     }
+
+    sorted_rows = sortByAtt(rows)
+
+    sorted_rows.forEach(item => {
+      output += item.cable.padEnd(25) + item.att.padStart(10) + " dB"
+      output += item.loss_percentage.padStart(6) + "%" + item.pwr_out.padStart(11) + " W<br>";
+    });
+
     document.getElementById("output").innerHTML = output;
 
   }
