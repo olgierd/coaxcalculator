@@ -3,7 +3,6 @@
 import jinja2
 import json
 import os
-import sys
 import yaml
 
 
