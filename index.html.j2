@@ -1,6 +1,13 @@
 <html>
 
 <body>
+
+<style type="text/css">
+pre { margin: 1 0 0 0; display: block; }
+pre.selected, pre:hover { background-color: #dddddd; }
+.details { margin: 5 0 5 0; font-weight: bold; }
+</style>
+
 <script type="application/json" id="cable_data">
 {{ cable_json }}
 </script>
@@ -9,10 +16,12 @@
 <input type="number" id="length" min="1" max="3000" step="1" value="10" onchange="javascript:update();"> m<br>
 <input type="number" id="pwr" min="1" max="1500" step="1" value="100" onchange="javascript:update();"> W (Power in)<br>
 
-<pre id="output">.</pre>
+<p id="output"></p>
 
 <script>
   var cables = JSON.parse(document.getElementById('cable_data').innerHTML);
+
+  var selected = [];
 
   function get_att_for_freq(att_data, frequency) {
 
@@ -20,7 +29,7 @@
 
     // frequency higher than last data point specified
     if(frequency > att_array[att_array.length - 1][0]) {
-      return "-";
+      return 10000;
     }
 
     // spot-on hit - no interpolation needed
@@ -47,63 +56,98 @@
 
   }
 
-  function sortByAtt(rows){
+  function sortByAtt(rows) {
     return rows.sort(function(a,b) {
-        return a.att - b.att
+        return a.att100m - b.att100m
     });
   }
 
+  function generateOutputStrings(cable_data, params) {
+    output = {
+      att: "-",
+      pwr_out: "-",
+      loss_percentage: "-"
+    }
+
+    if(cable_data.att100m < 10000) {
+      // calculate output power & percentage loss
+      output.att = cable_data.att100m * params.length/100;
+      output.pwr_out = 10**(Math.log10(params.pwr_in)-output.att/10);
+      output.loss_percentage = 100-10**(Math.log10(100)-output.att/10);
+
+      // round and change to strings
+      output.att = (Math.round(output.att*100)/100).toFixed(2);
+      output.pwr_out = (Math.round(output.pwr_out*100)/100).toFixed(2);
+      output.loss_percentage = (Math.round(output.loss_percentage*10)/10).toFixed(1);
+    }
+
+    return output;
+  }
+
+  function select(key) {
+    if(!selected.includes(key)) {
+      selected.push(key);
+    }
+    else {
+      selected.splice(selected.indexOf(key), 1);
+    }
+
+    update();
+  }
+
   function update() {
-    frequency = parseInt(document.getElementById('freq').value);
-    length = parseInt(document.getElementById('length').value);
-    pwr_in = parseInt(document.getElementById('pwr').value);
 
-    var output = "Calculating for " + frequency + " MHz & " + length + " meter(s) & " + pwr_in + " Watts input: <br><br>";
-
-    output += "<b>Cable" + ' '.repeat(31) + "Loss          Power out</b></br>"
+    // read input parameters
+    params = {
+      "freq": parseInt(document.getElementById('freq').value),
+      "length": parseInt(document.getElementById('length').value),
+      "pwr_in": parseInt(document.getElementById('pwr').value)
+    };
 
     var rows = [];
 
+    // calculate attenuation for a given freq for every cable (/100 m)
     for (var key in cables) {
-      att = get_att_for_freq(cables[key]["attenuation"], frequency);
-
-      if(isNaN(att)) {
-        att = "-";
-        pwr_out = "-";
-        loss_percentage = "-"
-      }
-      else {
-        att = att * length/100;
-        pwr_out = 10**(Math.log10(pwr_in)-att/10);
-        loss_percentage = 100-10**(Math.log10(100)-att/10);
-
-        att = Math.round(att*100)/100;
-        att = att.toFixed(2);
-
-        pwr_out = Math.round(pwr_out*100)/100;
-        pwr_out = pwr_out.toFixed(2);
-
-        loss_percentage = Math.round(loss_percentage*10)/10;
-        loss_percentage = loss_percentage.toFixed(1);
-
+      cur = {
+        key: key,
+        name: cables[key].name,
+        att100m: get_att_for_freq(cables[key]["attenuation"], params.freq)
       }
 
-      rows.push({
-        "cable":  cables[key].name,
-        "att": att,
-        "loss_percentage": loss_percentage,
-        "pwr_out": pwr_out
-      })
+      // add extra params (dB/power loss per specified cable length)
+      rows.push(Object.assign({}, cur, generateOutputStrings(cur, params)));
     }
 
+    // sort by attenuation
     sorted_rows = sortByAtt(rows)
 
-    sorted_rows.forEach(item => {
-      output += item.cable.padEnd(25) + item.att.padStart(10) + " dB"
-      output += item.loss_percentage.padStart(6) + "%" + item.pwr_out.padStart(11) + " W<br>";
-    });
+    output_p = document.getElementById("output");
+    output_p.innerHTML = ''
 
-    document.getElementById("output").innerHTML = output;
+    // generate header
+    out_row = document.createElement('pre');
+    output =  "Calculating for " + params.freq + " MHz & " + params.length + " meter(s) & " + params.pwr_in + " Watts input: <br><br>";
+    output += "<b>Cable" + ' '.repeat(31) + "Loss          Power out</b></br>"
+
+    out_row.innerHTML = output;
+    output_p.appendChild(out_row);
+
+    sorted_rows.forEach(o => {
+      out_row = document.createElement('pre');
+      out_row.id = o.key;
+
+      // select clicked rows 
+      out_row.onclick = function(event) { select(o.key) };
+      if(selected.includes(o.key)) {
+        out_row.className = "selected";
+      }
+
+      output = "";
+      output += o.name.padEnd(25) + o.att.padStart(10) + " dB"
+      output += o.loss_percentage.padStart(6) + "%" + o.pwr_out.padStart(11) + " W<br>";
+      out_row.innerHTML = output;
+      output_p.appendChild(out_row);
+    });
 
   }
 
