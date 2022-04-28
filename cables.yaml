@@ -178,3 +178,13 @@ h500-belden:
     ext_diameter_mm: 9.8
     velocity_factor: 0.81
     impedance: 50
+h1000-belden:
+  name: H1000 (Belden)
+  manufacturer: Belden
+  type: H1000
+  attenuation: { 5: 0.8, 50: 2.8, 100: 4, 200: 5.7, 400: 8.4, 600: 10.5, 800: 12.3, 1000: 14, 1350: 16.7, 1750: 19.5, 2150: 22.1, 2400: 23.6, 5000: 37.4, 10000: 59.3, }
+  data_source: https://www.belden.com/products/cable/coax-triax-cable/50-ohm-coax-cable/h1000ch
+  additional_info:
+    ext_diameter_mm: 10.3
+    velocity_factor: 0.83
+    impedance: 50
