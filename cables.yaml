@@ -168,3 +168,13 @@ andrew-heliax-fsj-1/4:
     ext_diameter_mm: 7.36
     velocity_factor: 0.82
     impedance: 50
+h500-belden:
+  name: H500 (Belden)
+  manufacturer: Belden
+  type: H500
+  attenuation: { 5: 0.9, 50: 2.9, 100: 4.1, 200: 6, 400: 8.7, 600: 10.9, 800: 12.9, 1000: 14.6, 1350: 17.4, 1750: 20.3, 2150: 23, 2400: 24.6, 5000: 38.9, 10000: 61.7 }
+  data_source: https://www.belden.com/products/cable/coax-triax-cable/50-ohm-coax-cable/h500c00
+  additional_info:
+    ext_diameter_mm: 9.8
+    velocity_factor: 0.81
+    impedance: 50
