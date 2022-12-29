@@ -3,4 +3,4 @@ install-dev:
 
 generate-html:
 	rm docs/index.html
-	python genhtml.py
+	python3 genhtml.py
