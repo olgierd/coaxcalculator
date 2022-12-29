@@ -188,3 +188,12 @@ h1000-belden:
     ext_diameter_mm: 10.3
     velocity_factor: 0.83
     impedance: 50
+CNT400-andrew:
+  name: CNT-400 (Andrew)
+  manufacturer: Andrew
+  attenuation: { 30: 2.49, 50: 3.18, 150: 4.92, 220: 6.23, 450: 8.86, 900: 12.8, 1500: 16.7, 1800: 18.4, 2000:19.4, 2400: 21.65, 2500: 22, 3000: 24.6, 4000:28.87, 4500: 30.84, 5000: 32.81, 5200: 33.46, 5500: 34.78, 5800: 35.76, 6000: 36.42 }
+  data_source: https://www.commscope.com/globalassets/digizuite/110932-p360-cnt-400-external.pdf
+  additional_info:
+    ext_diameter_mm: 10.29
+    velocity_factor: 0.85
+    impedance: 50
