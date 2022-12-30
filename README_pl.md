@@ -25,4 +25,4 @@ Ponieważ wartości tłumienia są podawane dla konkretnych częstotliwości, za
 
 ## Brakuje kabla X
 
-Jeśli Twojego ulubionego kabla nie ma na liście, to zmodyfikuj plik `cables.yaml`, uzupełniając wszystkie pola jak w przykładzie powyżej i otwórz pull request.
+Jeśli Twojego ulubionego kabla nie ma na liście, to zmodyfikuj plik `cables.yaml`, uzupełniając wszystkie pola jak w przykładzie powyżej i otwórz pull request. Jeśli jednak nie potrafisz, to daj nam znać że czegos brakuje poprzez [issues](https://github.com/olgierd/coaxcalculator/issues/new).
