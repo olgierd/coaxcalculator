@@ -20,7 +20,7 @@ h155-belden:
     impedance: 50
 ```
 
-Since the attenuation is specified for a given frequency values, usually different for every manufacturer, a simple [linear interpolation](https://en.wikipedia.org/wiki/Linear_interpolation) is performed.
+Since the attenuation is specified for a given frequency values, usually different for every manufacturer, a simple [linear interpolation](https://en.wikipedia.org/wiki/Linear_interpolation) is performed to obtain attenuation values for a frequency of interest.
 
 ## How to contribute?
 
