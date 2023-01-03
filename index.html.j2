@@ -6,6 +6,7 @@
 pre { margin: 1 0 0 0; display: block; }
 pre.selected, pre:hover { background-color: #dddddd; }
 .details { margin: 5 0 5 0; font-weight: bold; }
+a:link { text-decoration: none; }
 </style>
 
 <script type="application/json" id="cable_data">
@@ -113,7 +114,8 @@ pre.selected, pre:hover { background-color: #dddddd; }
       cur = {
         key: key,
         name: cables[key].name,
-        att100m: get_att_for_freq(cables[key]["attenuation"], params.freq)
+        att100m: get_att_for_freq(cables[key]["attenuation"], params.freq),
+        link: cables[key].data_source
       }
 
       // add extra params (dB/power loss per specified cable length)
@@ -135,6 +137,7 @@ pre.selected, pre:hover { background-color: #dddddd; }
     output_p.appendChild(out_row);
 
     sorted_rows.forEach(o => {
+      console.log(o)
       out_row = document.createElement('pre');
       out_row.id = o.key;
 
@@ -145,7 +148,8 @@ pre.selected, pre:hover { background-color: #dddddd; }
       }
 
       output = "";
-      output += o.name.padEnd(25) + o.att.padStart(10) + " dB"
+      output +=  "<a href='" + o.link + "' target='_blank' rel='noopener noreferrer'>" + o.name.padEnd(25) + "</a>"
+      output += o.att.padStart(10) + " dB"
       output += o.loss_percentage.padStart(6) + "%" + o.pwr_out.padStart(11) + " W<br>";
       out_row.innerHTML = output;
       output_p.appendChild(out_row);
