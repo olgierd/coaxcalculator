@@ -147,9 +147,10 @@ a:link { text-decoration: none; }
       }
 
       output = "";
-      output +=  "<a href='" + o.link + "' target='_blank' rel='noopener noreferrer'>" + o.name.padEnd(25) + "</a>"
+      output += o.name.padEnd(25)
       output += o.att.padStart(10) + " dB"
-      output += o.loss_percentage.padStart(6) + "%" + o.pwr_out.padStart(11) + " W<br>";
+      output += o.loss_percentage.padStart(6) + "%" + o.pwr_out.padStart(11) + " W";
+      output += "    (<a href='" + o.link + "' target='_blank' rel='noopener noreferrer'>pdf</a>)"
       out_row.innerHTML = output;
       output_p.appendChild(out_row);
     });

@@ -6,6 +6,7 @@
 pre { margin: 1 0 0 0; display: block; }
 pre.selected, pre:hover { background-color: #dddddd; }
 .details { margin: 5 0 5 0; font-weight: bold; }
+a:link { text-decoration: none; }
 </style>
 
 <script type="application/json" id="cable_data">
@@ -27,7 +28,7 @@ pre.selected, pre:hover { background-color: #dddddd; }
 
   function get_att_for_freq(att_data, frequency) {
 
-    att_array = Object.entries(att_data).sort(function(a,b) { return a[0] - b[0];}); // convert dictionary to an array of pairs
+    att_array = Object.entries(att_data).sort(function(a,b) { return a[0] - b[0];}); // convert dictionary to an array of pairs and sort by frequency
 
     // frequency higher than last data point specified
     if(frequency > att_array[att_array.length - 1][0]) {
@@ -113,7 +114,8 @@ pre.selected, pre:hover { background-color: #dddddd; }
       cur = {
         key: key,
         name: cables[key].name,
-        att100m: get_att_for_freq(cables[key]["attenuation"], params.freq)
+        att100m: get_att_for_freq(cables[key]["attenuation"], params.freq),
+        link: cables[key].data_source
       }
 
       // add extra params (dB/power loss per specified cable length)
@@ -145,8 +147,10 @@ pre.selected, pre:hover { background-color: #dddddd; }
       }
 
       output = "";
-      output += o.name.padEnd(25) + o.att.padStart(10) + " dB"
-      output += o.loss_percentage.padStart(6) + "%" + o.pwr_out.padStart(11) + " W<br>";
+      output += o.name.padEnd(25)
+      output += o.att.padStart(10) + " dB"
+      output += o.loss_percentage.padStart(6) + "%" + o.pwr_out.padStart(11) + " W";
+      output += "    (<a href='" + o.link + "' target='_blank' rel='noopener noreferrer'>pdf</a>)"
       out_row.innerHTML = output;
       output_p.appendChild(out_row);
     });
