@@ -27,7 +27,7 @@ pre.selected, pre:hover { background-color: #dddddd; }
 
   function get_att_for_freq(att_data, frequency) {
 
-    att_array = Object.entries(att_data); // convert dictionary to an array of pairs
+    att_array = Object.entries(att_data).sort(function(a,b) { return a[0] - b[0];}); // convert dictionary to an array of pairs and sort by frequency
 
     // frequency higher than last data point specified
     if(frequency > att_array[att_array.length - 1][0]) {
