@@ -215,3 +215,13 @@ RFA-7/8"-Draka:
     ext_diameter_mm: 27.80
     velocity_factor: 0.90
     impedance: 50
+UltraFlex-7:
+  name: UltraFlex 7 (M&P)
+  manufacturer: M&P
+  type: RGAC7PLUS
+  attenuation: { 1.8: 1.1, 3.5: 1.3, 7: 1.7, 10: 1.9, 14: 2.2, 21: 2.6, 28: 3, 50: 4, 100: 5.8, 144: 6.9, 200: 8.2, 400: 11.8, 430: 12.3, 800: 17.1, 1000: 19.3, 1296: 22.3, 2400: 32.3, 3000: 36.2, 4000: 42.6, 5000: 49.3, 6000: 55.3, 7000: 61.6, 8000: 68.4 }
+  data_source: https://messi.it/dati/immagini/RGAC7PLUS-All1_EN.pdf
+  additional_info:
+    ext_diameter_mm: 7.3
+    velocity_factor: 0.83
+    impedance: 50
