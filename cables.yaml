@@ -225,3 +225,13 @@ UltraFlex-7:
     ext_diameter_mm: 7.3
     velocity_factor: 0.83
     impedance: 50
+5D-FB-Hansen:
+  name: 5D-FB
+  manufacturer: HANSEN
+  type: 5D-FB
+  attenuation: {100: 6.3, 150: 7.8, 280: 10.8, 350: 12.1, 400: 13.0, 800: 18.9, 900: 20.2, 1200: 23.7, 1500: 26.8, 1800: 29.7, 1900: 30.6, 2000: 31.5, 2200: 33.3, 2500: 35.8 }
+  data_source: https://www.caledonian-cables.co.uk/Coaxia_Cable/50Ohm%20RF/5D-FB.html
+  additional_info:
+    ext_diametr_mm: 7.5
+    velocity_factor: 0.82
+    impedance: 50
