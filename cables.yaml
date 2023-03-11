@@ -235,3 +235,13 @@ UltraFlex-7:
     ext_diametr_mm: 7.5
     velocity_factor: 0.82
     impedance: 50
+HyperFlex-5:
+  name: HyperFlex 5 (M&P)
+  manufacturer: M&P
+  type: HYPERFLEX5
+  attenuation: { 1.8: 1.4, 3.5: 1.9, 7: 2.3, 10: 2.6, 14: 3.0, 21: 3.6, 28: 4.1, 50: 5.5, 100: 8, 144: 9.6, 200: 11.4, 400: 16.3, 430: 17, 800: 23.4, 1000: 26.4, 1296: 30.5, 2400: 42.5, 3000: 48.1, 4000: 56.9, 5000: 65.2, 6000: 72.9}
+  data_source: https://messi.it/dati/layout/files/cartellaelementi/Hyperflex%205%20-%20Full%20Datasheet%20ENG.pdf
+  additional_info:
+    ext_diameter_mm: 5.4
+    velocity_factor: 0.87
+    impedance: 50
