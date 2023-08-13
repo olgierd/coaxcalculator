@@ -255,3 +255,23 @@ HyperFlex-5:
     ext_diameter_mm: 6.1
     velocity_factor: 0.81
     impedance: 50
+Trilan-400:
+  name: Trilan 400 (Dipol)
+  manufacturer: Dipol
+  type: Trilan 400
+  attenuation: { 30: 2.3, 50: 3, 150: 4.9, 220: 6, 450: 8.7, 900: 12.8, 1500: 17, 1800: 18.8, 2000: 20, 2500: 22.7, 5800: 37.6 }
+  data_source: https://www.dipol.com.pl/przewod_koncentryczny_50_om_tri-lan_400_wll_pe_fca_2_7-7_2-10_3_100m_E1173_100.htm
+  additional_info:
+    ext_diameter_mm: 10.3
+    velocity_factor: 0.83
+    impedance: 50
+Trilan-240:
+  name: Trilan 240 (Dipol)
+  manufacturer: Dipol
+  type: Trilan 240
+  attenuation: { 30: 4.2, 50: 5.4, 150: 9.2, 220: 11.2, 450: 16.2, 900: 23.3, 1500: 30.7, 1800: 33.9, 2000: 35.9, 2500: 40.6, 5800: 65.2 }
+  data_source: https://www.dipol.com.pl/przewod_koncentryczny_50_om_tri-lan_240_pe_fca_1_4-3_8-6_1_1m_E1171_1.htm
+  additional_info:
+    ext_diameter_mm: 6.1
+    velocity_factor: 0.81
+    impedance: 50
