@@ -285,7 +285,7 @@ LDF4-50A:
     ext_diameter_mm: 15.875
     velocity_factor: 0.88
     impedance: 50
-LDF4-50A:
+CNT-600:
   name: CNT-600 (Andrew)
   manufacturer: Andrew
   type: CNT-600
