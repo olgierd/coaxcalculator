@@ -285,3 +285,13 @@ LDF4-50A:
     ext_diameter_mm: 15.875
     velocity_factor: 0.88
     impedance: 50
+LDF4-50A:
+  name: CNT-600 (Andrew)
+  manufacturer: Andrew
+  type: CNT-600
+  attenuation: { 30: 1.60, 50: 1.97, 150: 3.20, 220: 3.80, 450: 5.60, 900: 8.20, 1500: 10.80, 1800: 12.10, 2000: 12.80, 2400: 14.44, 2500: 14.80, 3000: 16.40, 4000: 19.36, 4500: 21.00, 5000: 22.31, 5200: 22.97, 5500: 23.62, 5800: 24.28, 6000: 24.93 }
+  data_source: https://www.kabeltechnika.pl/dat/kabeltechnika/2348_specyfikacja.pdf
+  additional_info:
+    ext_diameter_mm: 14.99
+    velocity_factor: 0.87
+    impedance: 50
