@@ -390,7 +390,7 @@ Ecoflex-10:
   manufacturer: SSB-Electronic GmbH
   type: Ecoflex 10
   attenuation: { 5: 0.76, 10: 1.14, 50: 2.66, 100: 3.80, 144: 4.66, 200: 5.51, 300: 6.94, 432: 8.46, 500: 9.12, 800: 11.88, 1000: 15.49, 1296: 15.68, 1500: 17.01, 1800: 18.91, 2000: 20.14, 2400: 22.42, 3000: 25.37, 4000: 29.55, 5000: 33.44, 6000: 37.05 }
-  data_source: https://www.ssb.de/download/Kabel/DE/6080%20DE.pdf
+  data_source: https://www.ssb.de/download/Kabel/ENG/6080%20ENG.pdf
   additional_info:
     ext_diameter_mm: 10.2
     velocity_factor: 0.85
@@ -400,7 +400,7 @@ Ecoflex-15:
   manufacturer: SSB-Electronic GmbH
   type: Ecoflex 15
   attenuation: { 5: 0.60, 10: 0.86, 50: 1.96, 100: 2.81, 144: 3.40, 200: 4.05, 300: 5.00, 432: 6.10, 500: 6.70, 800: 8.60, 1000: 9.80, 1296: 11.40, 1500: 12.40, 1800: 13.80, 2000: 14.60, 2400: 16.20, 3000: 18.30, 4000: 21.60, 5000: 24.60, 6000: 27.50 }
-  data_source: https://www.ssb.de/download/Kabel/DE/6090%20DE.pdf
+  data_source: https://www.ssb.de/download/Kabel/ENG/6090%20ENG.pdf
   additional_info:
     ext_diameter_mm: 14.6
     velocity_factor: 0.85
