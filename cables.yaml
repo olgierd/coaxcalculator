@@ -345,3 +345,63 @@ ExtraFlex-BURY-7:
     ext_diameter_mm: 7.3
     velocity_factor: 0.83
     impedance: 50
+Aircell-5:
+  name: Aircell 5 (SSB)
+  manufacturer: SSB-Electronic GmbH
+  type: Aircell 5
+  attenuation: { 5: 1.97, 10: 2.78, 50: 6.28, 100: 8.93, 144: 10.76, 200: 12.74, 300: 15.70, 432: 18.99, 500: 20.49, 800: 26.24, 1000: 29.54, 1296: 33.92, 1500: 36.70, 1800: 40.50, 2000: 42.88, 2400: 47.38, 3000: 53.57, 4000: 62.88, 5000: 71.3, 6000: 78.85, 10000: 106.4 }
+  data_source: http://ssb.de/download/Kabel/ENG/6050%20ENG.pdf
+  additional_info:
+    ext_diameter_mm: 5.0
+    velocity_factor: 0.85
+    impedance: 50
+Aircell-7:
+  name: Aircell 7 (SSB)
+  manufacturer: SSB-Electronic GmbH
+  type: Aircell 7
+  attenuation: { 5: 1.52, 10: 2.09, 50: 4.29, 100: 5.97, 144: 7.22, 200: 8.59, 300: 10.64, 432: 12.92, 500: 13.98, 800: 18.05, 1000: 20.44, 1296: 23.60, 1500: 25.73, 1800: 28.50, 2000: 30.29, 2400: 33.82, 3000: 38.84, 4000: 46.66, 5000: 54.19, 6000: 61.66 }
+  data_source: https://www.ssb.de/download/Kabel/ENG/6070%20ENG.pdf
+  additional_info:
+    ext_diameter_mm: 7.3
+    velocity_factor: 0.85
+    impedance: 50
+Ecoflex-5:
+  name: Ecoflex 5 (SSB)
+  manufacturer: SSB-Electronic GmbH
+  type: Ecoflex 5
+  attenuation: { 10: 2.66, 20: 3.80, 50: 5.32, 100: 7.60, 144: 8.74, 200: 10.21, 300: 12.83, 432: 16.29, 500: 18.05, 800: 22.90, 1000: 26.13, 1296: 29.93, 1500: 32.59, 1800: 36.39, 2000: 38.95, 2400: 43.23, 3000: 49.40, 4000: 57.95, 5000: 66.03, 6000: 74.10 }
+  data_source: https://www.ssb.de/download/Kabel/ENG/60500%20ENG.pdfn
+  additional_info:
+    ext_diameter_mm: 5.5
+    velocity_factor: 0.80
+    impedance: 50
+Ecoflex-7:
+  name: Ecoflex 7 (SSB)
+  manufacturer: SSB-Electronic GmbH
+  type: Ecoflex 7
+  attenuation: { 5: 1.33, 10: 1.88, 50: 3.33, 100: 5.37, 144: 6.08, 200: 7.13, 300: 8.93, 432: 11.40, 500: 12.59, 800: 15.96, 1000: 18.43, 1296: 20.71, 1500: 22.99, 1800: 25.46, 2000: 27.27, 2400: 30.40, 3000: 34.96, 4000: 41.99, 5000: 48.83, 6000: 55.48 }
+  data_source: https://www.ssb.de/download/Kabel/ENG/60700%20ENG.pdf
+  additional_info:
+    ext_diameter_mm: 7.3
+    velocity_factor: 0.85
+    impedance: 50
+Ecoflex-10:
+  name: Ecoflex 10 (SSB)
+  manufacturer: SSB-Electronic GmbH
+  type: Ecoflex 10
+  attenuation: { 5: 0.76, 10: 1.14, 50: 2.66, 100: 3.80, 144: 4.66, 200: 5.51, 300: 6.94, 432: 8.46, 500: 9.12, 800: 11.88, 1000: 15.49, 1296: 15.68, 1500: 17.01, 1800: 18.91, 2000: 20.14, 2400: 22.42, 3000: 25.37, 4000: 29.55, 5000: 33.44, 6000: 37.05 }
+  data_source: https://www.ssb.de/download/Kabel/ENG/6080%20ENG.pdf
+  additional_info:
+    ext_diameter_mm: 10.2
+    velocity_factor: 0.85
+    impedance: 50
+Ecoflex-15:
+  name: Ecoflex 15 (SSB)
+  manufacturer: SSB-Electronic GmbH
+  type: Ecoflex 15
+  attenuation: { 5: 0.60, 10: 0.86, 50: 1.96, 100: 2.81, 144: 3.40, 200: 4.05, 300: 5.00, 432: 6.10, 500: 6.70, 800: 8.60, 1000: 9.80, 1296: 11.40, 1500: 12.40, 1800: 13.80, 2000: 14.60, 2400: 16.20, 3000: 18.30, 4000: 21.60, 5000: 24.60, 6000: 27.50 }
+  data_source: https://www.ssb.de/download/Kabel/ENG/6090%20ENG.pdf
+  additional_info:
+    ext_diameter_mm: 14.6
+    velocity_factor: 0.85
+    impedance: 50
