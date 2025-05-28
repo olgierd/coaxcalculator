@@ -405,3 +405,13 @@ Ecoflex-15:
     ext_diameter_mm: 14.6
     velocity_factor: 0.85
     impedance: 50
+RG-214:
+  name: RG-214 (Telegärtner)
+  manufacturer: Telegärtner
+  type: RG-214
+  attenuation: { 50: 4.5, 100: 6.8, 200: 10.3, 400: 15, 600: 20, 800: 23, 900: 25, 1000: 27, 1200: 30, 1500: 34, 1800: 38, 2000: 40, 2300: 44, 2500: 46, 3000: 51 }
+  data_source: https://www.kabeltechnika.pl/dat/kabeltechnika/L01002B0000KP.pdf
+  additional_info:
+    ext_diameter_mm: 10.8
+    velocity_factor: 66
+    impedance: 50
