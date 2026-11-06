@@ -425,3 +425,13 @@ FSJ4-50B:
     ext_diameter_mm: 13.5
     velocity_factor: 81
     impedance: 50
+RG8X-belden:
+  name: RG-8X (Belden 7808R)
+  manufacturer: Belden
+  type: RG8X
+  attenuation: { 5: 1.903, 10: 2.526, 30: 4.265, 50: 5.250, 150: 9.187, 220: 11.155, 450: 16.077, 900: 22.967, 1500: 29.857, 1800: 33.138, 2000: 35.107, 2500: 39.372, 3000: 43.965, 3500: 47.903, 4500: 54.793, 5800: 63.980, 6000: 64.964 }
+  data_source: https://www.farnell.com/datasheets/1748435.pdf
+  additional_info:
+    ext_diameter_mm: 6.096
+    velocity_factor: 0.86
+    impedance: 50
